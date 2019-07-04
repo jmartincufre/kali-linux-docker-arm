@@ -1,0 +1,9 @@
+FROM jmartincufre/kali-linux-docker-arm:1
+
+RUN apt-get update
+RUN apt-get install -yqq kali-linux kali-linux-wireless firmware-atheros firmware-ralink kali-linux-rfid software-properties-common --fix-missing \
+&& echo 'VERSION_CODENAME=kali-rolling' >> /etc/os-release
+RUN apt-get install -yqq git colordiff colortail nano unzip vim tmux xterm zsh curl telnet strace tmate less build-essential wget python3-setuptools python3-pip zstd net-tools bash-completion iputils-tracepath nodejs npm yarnpkg
+RUN apt-get clean -yqq
+RUN update-rc.d -f ssh remove && update-rc.d -f ssh defaults && rm /etc/ssh/ssh_host_* && dpkg-reconfigure openssh-server && echo "PermitRootLogin yes" >> /etc/ssh/sshd_config && service ssh restart && update-rc.d -f ssh enable 2 3 4 5 && root:toor | chpasswd
+CMD ["/bin/bash"]

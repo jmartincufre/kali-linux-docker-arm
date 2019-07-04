@@ -28,6 +28,6 @@ curl "https://gitlab.com/kalilinux/packages/debootstrap/raw/kali/master/scripts/
     --build-arg BUILD_DATE=$BUILD_DATE \
     --build-arg VERSION=$VERSION \
     --build-arg VCS_URL=$VCS_URL \
-    --build-arg VCS_REF=$VCS_REF .
+    --build-arg VCS_REF=$VCS_REF . \
   && echo "Build OK" \
   || echo "Build failed!"
