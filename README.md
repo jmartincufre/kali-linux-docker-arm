@@ -1,7 +1,10 @@
-# Official Kali Linux Docker
+# Unofficial Kali Linux Docker ARM image
 This Kali Linux Docker image provides a minimal base install of the latest version of the Kali Linux Rolling Distribution.
 There are no tools added to this image, so you will need to install them yourself. 
 For details about Kali Linux metapackages, check https://www.kali.org/news/kali-linux-metapackages/
+
+# ARM image
+This build script was run on an ARM64 VM. Dockerfile-2 includes a base image meant to be used with ARM64 devices.
 
 # REQUIRES EXPERIMENTAL TO BE TURNED ON
 Due to --squash being passed to the docker daemon, if experimental features
